@@ -27,4 +27,4 @@ proguard/
 *.iml
 *.ipr
 *.iws
- 
+localRepo/
