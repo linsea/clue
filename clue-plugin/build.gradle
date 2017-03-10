@@ -33,6 +33,7 @@ pluginBundle {
     }
 }
 
+//local debug publish
 // ./gradlew :clue-plugin:uploadArchives to publish to rootProject/localRepo dir
 uploadArchives {
     repositories {
