@@ -1,5 +1,5 @@
-apply plugin: "groovy"
 apply plugin: "com.gradle.plugin-publish"
+apply plugin: "groovy"
 apply plugin: 'maven'
 
 repositories {
@@ -23,16 +23,15 @@ pluginBundle {
     website = 'https://github.com/linsea/clue'
     vcsUrl = 'https://github.com/linsea/clue'
     description = 'a extremely high-performance log library for android'
-    tags = ['android', 'log', 'logger', 'android log', 'android logger']
+    tags = ['android-logger', 'log', 'logger', 'android', 'high-performance']
 
     plugins {
-        nativeDependenciesPlugin {
-            id = 'com.github.linsea.clue'
+        cluePlugin {
+            id = 'com.github.linsea.clue-plugin'
             displayName = 'a extremely high-performance log library for android'
         }
     }
 }
-
 
 // ./gradlew :clue-plugin:uploadArchives to publish to rootProject/localRepo dir
 uploadArchives {

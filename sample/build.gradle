@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.github.linsea.clue-plugin'
+//apply plugin: 'com.github.linsea.clue-plugin'
 
 android {
     compileSdkVersion 25
