@@ -12,10 +12,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     static final String TAG = "Monitor";
 
-    public MainActivity() {
-        super();
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

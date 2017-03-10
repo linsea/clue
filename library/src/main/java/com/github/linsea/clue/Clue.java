@@ -176,10 +176,11 @@ public class Clue {
                     }
 
                     StringBuilder sb = new StringBuilder(cacheMessage);
-                    sb.append(" [ Thread:").append(cachedThreadName);
-                    sb.append(" ").append(methodName).append("() ");
+                    sb.append(" [ ").append(methodName).append("() ");
                     sb.append("at(").append(cachedJavaFilename).append(".java");
-                    sb.append(":").append(lineNumber).append(") ]");
+                    sb.append(":").append(lineNumber).append(") Thread:");
+                    sb.append(cachedThreadName);
+                    sb.append(" ]");
 
                     if (t != null) {
                         sb.append("\n").append(getStackTraceString(t));
