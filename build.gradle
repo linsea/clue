@@ -2,7 +2,7 @@
 
 buildscript {
     repositories {
-        maven { url "localRepo" }//local debug reference
+        //maven { url "localRepo" }//local plugin debug reference
         mavenLocal()
         jcenter()
         maven { url "https://plugins.gradle.org/m2/" }
@@ -10,9 +10,9 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
-//        classpath "gradle.plugin.com.github.linsea:clue-plugin:1.0.0"
+        classpath "gradle.plugin.com.github.linsea:clue-plugin:1.0.0"
 
-        classpath "com.github.linsea:clue-plugin:1.0.0"//local debug reference
+//        classpath "com.github.linsea:clue-plugin:1.0.0"//local plugin debug reference
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
