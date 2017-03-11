@@ -30,98 +30,241 @@ public class Clue {
         }
     }
 
+    /**
+     * log a verbose message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void v(@NonNull String message, Object... args) {
         log(message, args, Log.VERBOSE, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a verbose message with {@code tag} as TAG
+     * @param tag tag
+     * @param message message
+     * @param args optional format args
+     */
     public static void vt(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.VERBOSE, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a verbose exception and a message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void v(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.VERBOSE, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a verbose exception and a message with {@code tag} as TAG
+     * @param tag tag
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void vt(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.VERBOSE, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a debug message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void d(@NonNull String message, Object... args) {
         log(message, args, Log.DEBUG, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a debug message with {@code tag} as TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void dt(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.DEBUG, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and a debug message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void d(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.DEBUG, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and a debug message with {@code tag} as TAG
+     * @param tag TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void dt(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.DEBUG, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an info message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void i(@NonNull String message, Object... args) {
         log(message, args, Log.INFO, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an info message with {@code tag} as TAG
+     * @param tag TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void it(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.INFO, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an info message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void i(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.INFO, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an info message with {@code tag} as TAG
+     * @param tag TAG 
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void it(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.INFO, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an warning message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void w(@NonNull String message, Object... args) {
         log(message, args, Log.WARN, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an warning message with {@code tag} as TAG
+     * @param tag TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void wt(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.WARN, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a warning exception and an warning message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void w(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.WARN, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a warning exception and an warning message with {@code tag} as TAG
+     * @param tag TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void wt(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.WARN, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an error message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void e(@NonNull String message, Object... args) {
         log(message, args, Log.ERROR, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an error message with {@code tag} as TAG
+     * @param tag TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void et(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.ERROR, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an error message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void e(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.ERROR, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an error message with {@code tag} as TAG
+     * @param tag TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void et(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.ERROR, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an assert message with Class file name as default TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void wtf(@NonNull String message, Object... args) {
         log(message, args, Log.ASSERT, Object.class, "methodName", 0);
     }
 
+    /**
+     * log an assert message with {@code tag} as TAG
+     * @param tag TAG
+     * @param message message
+     * @param args optional format args
+     */
     public static void wtft(String tag, @NonNull String message, Object... args) {
         log(tag, message, args, Log.ASSERT, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an assert message with Class file name as default TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void wtf(Throwable t, @NonNull String message, Object... args) {
         log(t, message, args, Log.ASSERT, Object.class, "methodName", 0);
     }
 
+    /**
+     * log a exception and an assert message with {@code tag} as TAG
+     * @param tag TAG
+     * @param t Throwable
+     * @param message message
+     * @param args optional format args
+     */
     public static void wtft(String tag, Throwable t, @NonNull String message, Object... args) {
         log(tag, t, message, args, Log.ASSERT, Object.class, "methodName", 0);
     }
