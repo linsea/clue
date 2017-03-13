@@ -12,15 +12,15 @@ extremely high-performance logger for android
 
 #### Usage
  1. add a log receiver in the application class
-    ```java
-    public class MyApplication extends Application {
-        @Override
-        public void onCreate() {
-            super.onCreate();
-            Clue.addLog(new ConsoleLog()); //init Clue log with default logcat
-        }
+```java
+public class MyApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Clue.addLog(new ConsoleLog()); //init Clue log with default logcat
     }
-    ```
+}
+```
  2. call `Clue`'s static methods.
 
 see `sample` application in `clue/sample`
