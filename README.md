@@ -11,7 +11,28 @@ extremely high-performance logger for android
 - Extensible API
 
 ## Usage
-1. add a log receiver in the application class
+1 add library dependency to your build.gradle file.
+```
+compile 'com.linsea:clue:1.0'
+```
+2 include plugin
+```
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.github.linsea:clue-plugin:1.0.0"
+  }
+}
+```
+3 apply plugin in your project build.gradle
+```
+apply plugin: "com.github.linsea.clue-plugin"
+```
+4 add a log receiver in the application class
 ```java
 public class MyApplication extends Application {
     @Override
@@ -21,7 +42,7 @@ public class MyApplication extends Application {
     }
 }
 ```
-2. call `Clue`'s static methods.
+5 call `Clue`'s static methods.
 
 see `sample` application in `clue/clue-sample`
 
