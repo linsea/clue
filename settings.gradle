@@ -1,1 +1,4 @@
-include ':sample', ':library', ':clue-plugin'
+include ':clue', ':clue-plugin', ':clue-sample'
+
+rootProject.name = 'clue-parent'
+
