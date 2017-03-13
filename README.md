@@ -1,7 +1,7 @@
-## Clue
+# Clue
 extremely high-performance logger for android
 
-#### Features
+## Features
 - Class name tag(default) or custom tag
 - Caller method name
 - Source line number information
@@ -10,8 +10,8 @@ extremely high-performance logger for android
 - Link to source in IDE
 - Extensible API
 
-#### Usage
- 1. add a log receiver in the application class
+## Usage
+1. add a log receiver in the application class
 ```java
 public class MyApplication extends Application {
     @Override
@@ -21,14 +21,11 @@ public class MyApplication extends Application {
     }
 }
 ```
- 2. call `Clue`'s static methods.
+2. call `Clue`'s static methods.
 
-see `sample` application in `clue/sample`
+see `sample` application in `clue/clue-sample`
 
-
-
-
-#### License
+# License
 
     Copyright 2017 Clue author
 
