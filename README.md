@@ -11,11 +11,7 @@ extremely high-performance logger for android
 - Extensible API
 
 ## Usage
-1 add library dependency to your build.gradle file.
-```
-compile 'com.linsea:clue:1.0'
-```
-2 include plugin
+1 include plugin in top level `build.gradle` file.
 ```
 buildscript {
   repositories {
@@ -28,11 +24,15 @@ buildscript {
   }
 }
 ```
-3 apply plugin in your project build.gradle
+2 apply plugin to project `build.gradle`
 ```
 apply plugin: "com.github.linsea.clue-plugin"
 ```
-4 add a log receiver in the application class
+3 add library dependency to project `build.gradle` file.
+```
+compile 'com.linsea:clue:1.0'
+```
+4 add a log receiver in the `Application` class
 ```java
 public class MyApplication extends Application {
     @Override
@@ -44,7 +44,30 @@ public class MyApplication extends Application {
 ```
 5 call `Clue`'s static methods.
 
-see `sample` application in `clue/clue-sample`
+see sample application in `clue/clue-sample`
+
+## Why High-Performance
+In common logger library, in order to get caller class name(for TAG usage),
+method name and source line number, they make use of below APIs:
+```java
+StackTraceElement[] stacks = Thread.currentThread().getStackTrace(); //expensive cost
+StackTraceElement element = stacks[4];
+int lineNumber = element.getLineNumber();
+String fileName = element.getFileName()
+```
+which cost is extremely expensive, and should never happen in production.
+
+It is obviously when source code is finished and ready to compile, the class name,
+method name and source line number is fixed and never change, should not dynamically
+be obtained at runtime to degrade application performances.
+
+**Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
+these information at compile time to speed up the application performances.
+
+## Extension
+You are able to add your own `logger` implementation to `Clue` (e.g. a logger to write logs
+to files), which only needs to extends `BaseLog` and call `Clue.add(...)` to add to Clue,
+more details references `ConsoleLog` implementation.
 
 # License
 
