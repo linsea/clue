@@ -1,3 +1,5 @@
+## [中文版说明](README_zh.md)
+
 # Clue
 a extremely high-performance logger for android
 
@@ -62,12 +64,13 @@ method name and source line number is fixed and never change, should not dynamic
 be obtained at runtime to degrade application performances.
 
 **Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
-these information at compile time to speed up the application performances.
+these information at compile time to speed up the application performances, this is useful
+in the scenario which would write logs for production APP.
 
 ## Extension
 You are able to add your own `logger` implementation to `Clue` (e.g. a logger to write logs
 to files), which only needs to extends `BaseLog` and call `Clue.add(...)` to add to Clue,
-more details references `ConsoleLog` implementation.
+more details references [ConsoleLog](https://github.com/linsea/clue/blob/master/clue/src/main/java/com/github/linsea/clue/ConsoleLog.java) implementation.
 
 # License
 
