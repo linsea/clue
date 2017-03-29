@@ -1,13 +1,13 @@
 # Clue
-extremely high-performance logger for android
+a extremely high-performance logger for android
 
 ## Features
 - Class name tag(default) or custom tag
 - Caller method name
 - Source line number information
 - Thread name information
-- High performance to intercept above information
 - Link to source in IDE
+- High performance to intercept above information
 - Extensible API
 
 ## Usage
