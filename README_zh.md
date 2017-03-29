@@ -1,4 +1,4 @@
-# Clue
+# clue
 一个高性能的Android日志库
 
 ## 功能
@@ -43,6 +43,17 @@ public class MyApplication extends Application {
 }
 ```
 5 调用 `Clue` 类的静态方法记录日志.
+比如:
+```java
+
+public static void v(@NonNull String message, Object... args);
+
+public static void vt(String tag, @NonNull String message, Object... args)
+
+public static void v(Throwable t, @NonNull String message, Object... args)
+
+public static void vt(String tag, Throwable t, @NonNull String message, Object... args)
+```
 
 更详细的使用方法请参考位于 `clue/clue-sample` 的示例项目.
 
@@ -68,7 +79,7 @@ String fileName = element.getFileName()
 
 # License
 
-    Copyright 2017 Clue author
+    Copyright 2017 clue author
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

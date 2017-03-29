@@ -1,6 +1,6 @@
 ## [中文版说明](README_zh.md)
 
-# Clue
+# clue
 a extremely high-performance logger for android
 
 ## Features
@@ -44,7 +44,17 @@ public class MyApplication extends Application {
     }
 }
 ```
-5 call `Clue`'s static methods.
+5 call `Clue`'s static methods, e.g.
+```java
+
+public static void v(@NonNull String message, Object... args);
+
+public static void vt(String tag, @NonNull String message, Object... args)
+
+public static void v(Throwable t, @NonNull String message, Object... args)
+
+public static void vt(String tag, Throwable t, @NonNull String message, Object... args)
+```
 
 see sample application in `clue/clue-sample`
 
@@ -74,7 +84,7 @@ more details references [ConsoleLog](https://github.com/linsea/clue/blob/master/
 
 # License
 
-    Copyright 2017 Clue author
+    Copyright 2017 clue author
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
