@@ -12,6 +12,8 @@ a extremely high-performance logger for android
 - High performance to intercept above information
 - Extensible API
 
+![](clue.jpg)
+
 ## Usage
 1 include plugin in top level `build.gradle` file.
 ```
