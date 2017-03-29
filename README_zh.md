@@ -10,7 +10,7 @@
 - 无性能损耗地获取以上日志信息
 - 可扩展的API接口设计
 
-![](clue.jpg)
+![](clue.png)
 
 ## 使用方法
 1 在项目的顶级 `build.gradle` 文件中引用插件的classpath.
