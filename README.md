@@ -3,6 +3,25 @@
 # clue
 a extremely high-performance logger for android
 
+## Why High-Performance
+In common logger library, in order to get caller class name(for TAG usage),
+method name and source line number, they make use of below APIs:
+```java
+StackTraceElement[] stacks = Thread.currentThread().getStackTrace(); //expensive cost
+StackTraceElement element = stacks[4];
+int lineNumber = element.getLineNumber();
+String fileName = element.getFileName()
+```
+which cost is extremely expensive, and should never happen in production.
+
+It is obviously when source code is finished and ready to compile, the class name,
+method name and source line number is fixed and never change, should not dynamically
+be obtained at runtime to degrade application performances.
+
+**Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
+these information at compile time to speed up the application performances, this is especially
+useful in the scenario which would write logs for production APP.
+
 ## Features
 - Class name tag(default) or custom tag
 - Caller method name
@@ -59,25 +78,6 @@ public static void vt(String tag, Throwable t, @NonNull String message, Object..
 ```
 
 see sample application in `clue/clue-sample`
-
-## Why High-Performance
-In common logger library, in order to get caller class name(for TAG usage),
-method name and source line number, they make use of below APIs:
-```java
-StackTraceElement[] stacks = Thread.currentThread().getStackTrace(); //expensive cost
-StackTraceElement element = stacks[4];
-int lineNumber = element.getLineNumber();
-String fileName = element.getFileName()
-```
-which cost is extremely expensive, and should never happen in production.
-
-It is obviously when source code is finished and ready to compile, the class name,
-method name and source line number is fixed and never change, should not dynamically
-be obtained at runtime to degrade application performances.
-
-**Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
-these information at compile time to speed up the application performances, this is useful
-in the scenario which would write logs for production APP.
 
 ## Extension
 You are able to add your own `logger` implementation to `Clue` (e.g. a logger to write logs

@@ -1,6 +1,22 @@
 # clue
 一个高性能的Android日志库
 
+## 为什么性能高
+通常的Android日志库, 为了获取到class名, 方法名, 行号, 都是通过以下API实现的:
+```java
+StackTraceElement[] stacks = Thread.currentThread().getStackTrace(); //expensive cost
+StackTraceElement element = stacks[4];
+int lineNumber = element.getLineNumber();
+String fileName = element.getFileName()
+```
+以上的方式损耗的性能是很高昂的, 线上代码中不应该出现.
+
+显然, 如果代码写好, 在编译之前, 所有的class名, 方法名, 行号是固定的, 不会再变化,
+不应该在运行时通过以上代价高昂的方式去动态获取.
+
+**Clue** 日志没有调用以上API来获取class名, 方法名, 行号, 而是换了另外一种思路,
+它通过在编译期操作class文件字节码, 从中获取这些信息. 这对于需要记录线上APP运行日志的场景尤其有用.
+
 ## 功能
 - Class名字作为默认的tag, 或者自定义tag
 - 显示调用者的方法名
@@ -58,22 +74,6 @@ public static void vt(String tag, Throwable t, @NonNull String message, Object..
 ```
 
 更详细的使用方法请参考位于 `clue/clue-sample` 的示例项目.
-
-## 为什么性能高
-通常的Android日志库, 为了获取到class名, 方法名, 行号, 都是通过以下API实现的:
-```java
-StackTraceElement[] stacks = Thread.currentThread().getStackTrace(); //expensive cost
-StackTraceElement element = stacks[4];
-int lineNumber = element.getLineNumber();
-String fileName = element.getFileName()
-```
-以上的方式损耗的性能是很高昂的, 线上代码中不应该出现.
-
-显然, 如果代码写好, 在编译之前, 所有的class名, 方法名, 行号是固定的, 不会再变化,
-不应该在运行时通过以上代价高昂的方式去动态获取.
-
-**Clue** 日志没有调用以上API来获取class名, 方法名, 行号, 而是换了另外一种思路,
-它通过在编译期操作class文件字节码, 从中获取这些信息. 这对于需要记录线上APP运行日志的场景尤其有用.
 
 ## 扩展接口
 你可以添加自己的`logger`实现来扩展`Clue`, 比如继承`BaseLog`实现一个把日志写入文件的Log Receiver,
