@@ -18,7 +18,7 @@ It is obviously when source code is finished and ready to compile, the class nam
 method name and source line number is fixed and never change, should not dynamically
 be obtained at runtime to degrade application performances.
 
-**Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
+**clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
 these information at compile time to speed up the application performances, this is especially
 valuable in the scenario which would write logs, but want not degrade the performance
 of the APP, or for the APPs which pursuit of extreme performance.
@@ -69,13 +69,13 @@ public class MyApplication extends Application {
 5 call `Clue`'s static methods, e.g.
 ```java
 
-public static void v(@NonNull String message, Object... args);
+public static void v(String message, Object... args);
 
-public static void vt(String tag, @NonNull String message, Object... args)
+public static void vt(String tag, String message, Object... args)
 
-public static void v(Throwable t, @NonNull String message, Object... args)
+public static void v(Throwable t, String message, Object... args)
 
-public static void vt(String tag, Throwable t, @NonNull String message, Object... args)
+public static void vt(String tag, Throwable t, String message, Object... args)
 ```
 
 see sample application in `clue/clue-sample`

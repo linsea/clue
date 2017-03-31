@@ -14,7 +14,7 @@ String fileName = element.getFileName()
 显然, 如果代码写好, 在编译之前, 所有的class名, 方法名, 行号是固定的, 不会再变化,
 不应该在运行时通过以上代价高昂的方式去动态获取.
 
-**Clue** 日志没有调用以上API来获取class名, 方法名, 行号, 而是换了另外一种思路,
+**clue** 日志没有调用以上API来获取class名, 方法名, 行号, 而是换了另外一种思路,
 它通过在编译期操作class文件字节码, 从中获取这些信息. 这对于追求极致性能的应用非常有价值,
 或者不希望因为打印日志而降低应用的性能, 或者需要记录线上APP运行日志的场景尤其有用.
 
@@ -65,13 +65,13 @@ public class MyApplication extends Application {
 比如:
 ```java
 
-public static void v(@NonNull String message, Object... args);
+public static void v(String message, Object... args);
 
-public static void vt(String tag, @NonNull String message, Object... args)
+public static void vt(String tag, String message, Object... args)
 
-public static void v(Throwable t, @NonNull String message, Object... args)
+public static void v(Throwable t, String message, Object... args)
 
-public static void vt(String tag, Throwable t, @NonNull String message, Object... args)
+public static void vt(String tag, Throwable t, String message, Object... args)
 ```
 
 更详细的使用方法请参考位于 `clue/clue-sample` 的示例项目.
