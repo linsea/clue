@@ -20,7 +20,8 @@ be obtained at runtime to degrade application performances.
 
 **Clue** don't call this expensive cost API, it leverages bytecode manipulate power to get
 these information at compile time to speed up the application performances, this is especially
-useful in the scenario which would write logs for production APP.
+valuable in the scenario which would write logs, but want not degrade the performance
+of the APP, or for the APPs which pursuit of extreme performance.
 
 ## Features
 - Class name tag(default) or custom tag
